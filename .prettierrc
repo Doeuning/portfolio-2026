@@ -1,0 +1,97 @@
+{
+  "window.zoomLevel": 1.5,
+  "editor.tabSize": 2,
+  "editor.fontSize": 16,
+  "editor.formatOnType": false,
+  "editor.formatOnPaste": false,
+  "editor.formatOnSave": true,
+  "editor.autoIndent": "none",
+  "editor.detectIndentation": false,
+  "editor.tabCompletion": "on",
+  "editor.suggestSelection": "recentlyUsed",
+  "editor.snippetSuggestions": "top",
+  "editor.suggest.localityBonus": false,
+  "editor.suggest.insertMode": "insert",
+  "editor.suggest.snippetsPreventQuickSuggestions": false,
+  "editor.linkedEditing": true,
+  "editor.fontFamily": "D2Coding, Consolas, 'Courier New', monospace",
+  "editor.gotoLocation.multipleDefinitions": "goto",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?_",
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "typescript": "typescriptreact",
+    "vue-html": "html",
+    "vue": "html",
+    "razor": "html",
+    "plaintext": "pug",
+    "django-html": "html",
+    "html": "html"
+  },
+  "emmet.preferences": {},
+  "emmet.showExpandedAbbreviation": "always",
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.useInlineCompletions": true,
+  "prettier.singleAttributePerLine": false,
+  "prettier.trailingComma": "all",
+  "prettier.semi": true,
+  "prettier.bracketSameLine": false,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "prettier.printWidth": 9999,
+    "prettier.htmlWhitespaceSensitivity": "ignore",
+    "prettier.singleAttributePerLine": false,
+    "prettier.bracketSameLine": true,
+    "prettier.tabWidth": 2
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "prettier.semi": true
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.autoSurround": "brackets",
+    "prettier.printWidth": 9999,
+    "prettier.useTabs": false,
+    "prettier.bracketSpacing": true,
+    "prettier.bracketSameLine": false,
+    "prettier.tabWidth": 2
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "prettier.tabWidth": 2
+  },
+  "html-css-class-completion.enableEmmetSupport": true,
+  "scss.format.newlineBetweenSelectors": false,
+  "scss.format.spaceAroundSelectorSeparator": true,
+  "scss.format.newlineBetweenRules": true,
+  "scss.lint.duplicateProperties": "warning",
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 600,
+  "files.associations": {
+    "*html": "html",
+    "*njk": "html"
+  },
+  "files.trimTrailingWhitespace": true,
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "expanded",
+      "extensionName": ".css",
+      "savePath": "~/../../styles"
+    }
+  ],
+  "liveSassCompile.settings.autoprefix": ["> 1%", "last 2 versions"],
+  "liveSassCompile.settings.generateMap": true,
+  "liveServer.settings.donotVerifyTags": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "git.suggestSmartCommit": false,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "workbench.preferredDarkColorTheme": "Default Dark+",
+  "workbench.preferredHighContrastLightColorTheme": "Default High Contrast"
+}
