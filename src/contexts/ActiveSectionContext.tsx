@@ -22,11 +22,12 @@ const ActiveSectionContext = createContext<ActiveSectionContextType | null>(
 export function ActiveSectionProvider({ children }: { children: ReactNode }) {
   const [activeId, setActiveId] = useState(navItems[0].id);
   const isProgrammaticScroll = useRef(false);
+  const rafId = useRef<number | null>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        if (isProgrammaticScroll.current) return; // 클릭 스크롤 중이면 무시
+        if (isProgrammaticScroll.current) return;
 
         const visible = entries.filter((entry) => entry.isIntersecting);
         if (visible.length > 0) {
@@ -47,23 +48,43 @@ export function ActiveSectionProvider({ children }: { children: ReactNode }) {
     return () => observer.disconnect();
   }, []);
 
+  const waitForScrollEnd = (onDone: () => void) => {
+    let lastY = window.scrollY;
+    let stableFrames = 0;
+
+    const check = () => {
+      const currentY = window.scrollY;
+
+      if (currentY === lastY) {
+        stableFrames += 1;
+      } else {
+        stableFrames = 0;
+        lastY = currentY;
+      }
+
+      // 약 6프레임(약 100ms) 동안 위치 변화 없으면 완료로 간주
+      if (stableFrames >= 6) {
+        onDone();
+        return;
+      }
+
+      rafId.current = requestAnimationFrame(check);
+    };
+
+    rafId.current = requestAnimationFrame(check);
+  };
+
   const goToSection = (id: string) => {
+    if (rafId.current) cancelAnimationFrame(rafId.current);
+
     isProgrammaticScroll.current = true;
     setActiveId(id);
 
-    const el = document.getElementById(id);
-    el?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 
-    const handleScrollEnd = () => {
+    waitForScrollEnd(() => {
       isProgrammaticScroll.current = false;
-      window.removeEventListener("scrollend", handleScrollEnd);
-    };
-    window.addEventListener("scrollend", handleScrollEnd);
-
-    // scrollend 미지원 브라우저 대비 안전장치
-    setTimeout(() => {
-      isProgrammaticScroll.current = false;
-    }, 1000);
+    });
   };
 
   return (
