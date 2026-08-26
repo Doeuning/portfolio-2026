@@ -1,16 +1,23 @@
-import React from "react";
+"use client";
+
+import { useActiveSection } from "@/contexts/ActiveSectionContext";
+import { ReactNode } from "react";
 import styles from "./Section.module.scss";
 
-export default function Section({
-  id,
-  children,
-}: {
+interface SectionProps {
   id: string;
-  children: React.ReactNode;
-}) {
+  children: ReactNode;
+}
+
+export default function Section({ id, children }: SectionProps) {
+  const { activeId } = useActiveSection();
+
   return (
-    <div className={styles.section} id={id}>
+    <section
+      id={id}
+      className={`${styles.section} ${activeId === id ? styles.active : ""}`}
+    >
       {children}
-    </div>
+    </section>
   );
 }

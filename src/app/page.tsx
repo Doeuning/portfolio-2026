@@ -6,19 +6,22 @@ import Skills from "@/components/sections/Skills";
 import Projects from "@/components/sections/Projects";
 import Experience from "@/components/sections/Experience";
 import Contact from "@/components/sections/Contact";
+import { ActiveSectionProvider } from "@/contexts/ActiveSectionContext";
 
 export default function Page() {
   return (
     <div className={styles.page}>
-      <Nav />
-      <main className={styles.main}>
-        <Home id="home" />
-        <About id="about" />
-        <Projects id="projects" />
-        <Experience id="experience" />
-        <Skills id="skills" />
-        <Contact id="contact" />
-      </main>
+      <ActiveSectionProvider>
+        <Nav />
+        <main className={styles.main}>
+          <Home id="home" />
+          <About id="about" />
+          <Projects id="projects" />
+          <Experience id="experience" />
+          <Skills id="skills" />
+          <Contact id="contact" />
+        </main>
+      </ActiveSectionProvider>
       {/* <main className={styles.main}>
         <Image
           className={styles.logo}

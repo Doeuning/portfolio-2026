@@ -3,4 +3,9 @@
   min-height: 100vh;
   height: 100vh;
   // padding-inline: 60px;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+  &.active {
+    opacity: 1;
+  }
 }
