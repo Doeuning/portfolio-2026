@@ -1,0 +1,47 @@
+.nav {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.button {
+  position: relative;
+  width: 100%;
+  border: none;
+  padding: 8px 16px;
+  background: none;
+  font-weight: 700;
+  font-size: 20px;
+  text-align: left;
+  transition: all 0.3s ease-in-out;
+
+  &::after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    transform: translateX(-100%);
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.active {
+  color: #fff;
+  &::after {
+    transform: translateX(0);
+  }
+}

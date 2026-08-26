@@ -1,10 +1,23 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import styles from "./page.module.scss";
+import Home from "@/components/sections/Home";
+import About from "@/components/sections/About";
+import Skills from "@/components/sections/Skills";
+import Projects from "@/components/sections/Projects";
+import Experience from "@/components/sections/Experience";
+import Contact from "@/components/sections/Contact";
 
-export default function Home() {
+export default function Page() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
+        <Home id="home" />
+        <About id="about" />
+        <Projects id="projects" />
+        <Experience id="experience" />
+        <Skills id="skills" />
+        <Contact id="contact" />
+      </main>
+      {/* <main className={styles.main}>
         <Image
           className={styles.logo}
           src="/next.svg"
@@ -60,7 +73,7 @@ export default function Home() {
             Documentation
           </a>
         </div>
-      </main>
+      </main> */}
     </div>
   );
 }
