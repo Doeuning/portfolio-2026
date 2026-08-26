@@ -3,6 +3,7 @@
   top: 50%;
   left: 0;
   transform: translateY(-50%);
+  width: v.$nav-width;
 }
 
 .list {
@@ -43,5 +44,18 @@
   color: #fff;
   &::after {
     transform: translateX(0);
+  }
+}
+
+.img {
+  position: absolute;
+  right: 0;
+  top: -100px;
+  transform: translateY(100%);
+  transition: all 0.2s ease-in-out;
+  opacity: 0;
+  &.active {
+    transform: translateY(0);
+    opacity: 1;
   }
 }

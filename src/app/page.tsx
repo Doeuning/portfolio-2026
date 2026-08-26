@@ -1,4 +1,5 @@
 import styles from "./page.module.scss";
+import Nav from "@/components/layouts/Nav";
 import Home from "@/components/sections/Home";
 import About from "@/components/sections/About";
 import Skills from "@/components/sections/Skills";
@@ -9,6 +10,7 @@ import Contact from "@/components/sections/Contact";
 export default function Page() {
   return (
     <div className={styles.page}>
+      <Nav />
       <main className={styles.main}>
         <Home id="home" />
         <About id="about" />
