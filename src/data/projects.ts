@@ -1,4 +1,20 @@
-export const projectsData = [
+export interface ProjectItem {
+  id: string;
+  imgUrl: string;
+  width: number;
+  bgUrl: string;
+  title: string;
+  desc: string;
+  detail: string;
+  detail2: [string];
+  period: string;
+  type: string;
+  role: string;
+  percentage: string;
+  tags: [string];
+}
+
+export const projectsData: ProjectItem[] = [
   {
     id: "hanjin",
     imgUrl: "/images/projects/logo-hanjintravel.svg",

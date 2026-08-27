@@ -2,7 +2,6 @@
 
 import { useActiveSection } from "@/contexts/ActiveSectionContext";
 import { ReactNode } from "react";
-import styles from "./Section.module.scss";
 
 interface SectionProps {
   id: string;
@@ -13,10 +12,7 @@ export default function Section({ id, children }: SectionProps) {
   const { activeId } = useActiveSection();
 
   return (
-    <section
-      id={id}
-      className={`${styles.section} ${activeId === id ? styles.active : ""}`}
-    >
+    <section id={id} className={`section ${activeId === id ? "active" : ""}`}>
       {children}
     </section>
   );

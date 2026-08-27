@@ -1,23 +1,18 @@
 .inner {
+  min-width: 0;
   padding-block: v.$spacing-xl;
-  overflow-x: auto;
-}
-
-.slider {
-  width: 100%;
 }
 
 .list {
-  display: flex;
-  list-style: none;
-  white-space: nowrap;
-  gap: v.$spacing-lg;
+  // display: flex;
+  // list-style: none;
+  // white-space: nowrap;
+  // gap: v.$spacing-lg;
 }
 
 .item {
   display: flex;
   flex-direction: column;
-  flex: 1 0 300px;
   overflow: hidden;
   width: 300px;
   border-radius: 8px;

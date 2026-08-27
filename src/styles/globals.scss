@@ -58,3 +58,18 @@ a {
     /* color-scheme: dark; */
   }
 }
+
+// layout
+
+.section {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  height: 100vh;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+  &.active {
+    opacity: 1;
+  }
+}
