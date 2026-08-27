@@ -12,7 +12,7 @@ export default function Nav() {
     <nav className={styles.nav}>
       <Image
         className={`${styles.img} ${activeId !== "home" ? styles.active : ""}`}
-        src="/home.png"
+        src="/images/profile/home.png"
         width={100}
         height={100}
         alt="home"
