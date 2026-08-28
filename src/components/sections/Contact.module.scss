@@ -1,0 +1,36 @@
+.inner {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.tit {
+  font-weight: 400;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  gap: v.$spacing-lg;
+  margin-top: v.$spacing-xl;
+}
+
+.item {
+  position: relative;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: v.$spacing-md;
+}
+.txt {
+  font-size: 16px;
+}

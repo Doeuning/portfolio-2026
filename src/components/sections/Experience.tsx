@@ -6,8 +6,10 @@ export default function Experience({ id }: { id: string }) {
   return (
     <Section id={id}>
       <div className={styles.inner}>
-        <h2>Experience</h2>
-        <h3>6년 5개월</h3>
+        <div className={styles.info}>
+          <h2 className={styles.tit}>Experience</h2>
+          <h3 className={styles.txt}>6년 5개월</h3>
+        </div>
         <table className={styles.table}>
           <caption className="hidden">경력사항</caption>
           <thead>

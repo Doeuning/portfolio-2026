@@ -2,6 +2,17 @@
   width: 100%;
 }
 
+.info {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: v.$spacing-sm;
+}
+.txt {
+  font-weight: 200;
+  font-size: 60px;
+}
+
 .table {
   width: 100%;
   border-collapse: collapse;

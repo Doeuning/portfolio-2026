@@ -73,3 +73,30 @@ a {
     opacity: 1;
   }
 }
+
+[class^="icon"] {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  padding: v.$spacing-lg;
+  background: center center / 40px auto no-repeat;
+  background-color: v.$color-black;
+  font-size: 0;
+  text-indent: -9999px;
+  transition: all 0.3s;
+  &:hover,
+  &:focus {
+    transform: scale(1.2);
+  }
+}
+.icon {
+  &-email {
+    background-image: url(/images/contact/contact-email.svg);
+  }
+  &-cell {
+    background-image: url(/images/contact/contact-cell.svg);
+  }
+  &-github {
+    background-image: url(/images/contact/contact-github.svg);
+  }
+}
