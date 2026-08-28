@@ -42,10 +42,29 @@
 .desc {
   margin-top: v.$spacing-xs;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 14px;
 }
+
 .detail {
   font-weight: 400;
   font-size: 14px;
   white-space: normal;
+}
+
+.btn {
+  display: block;
+  margin-top: v.$spacing-xl;
+  margin-inline: auto;
+  border: none;
+  border-radius: 8px;
+  padding: v.$spacing-sm v.$spacing-lg;
+  background: v.$color-black;
+  font-weight: 700;
+  font-size: 14px;
+  color: v.$color-white;
+  transition: all 0.3s;
+  &:hover,
+  &:focus {
+    background-color: v.$color-gray-500;
+  }
 }

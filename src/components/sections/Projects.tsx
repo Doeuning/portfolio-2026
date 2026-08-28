@@ -29,7 +29,9 @@ export default function Projects({ id }: { id: string }) {
                 <h3 className={styles.tit}>{project.title}</h3>
                 <p className={styles.desc}>{project.desc}</p>
                 {/* <div className={styles.detail}>{project.detail}</div> */}
-                <button type="button">자세히 보기</button>
+                <button type="button" className={styles.btn}>
+                  자세히 보기
+                </button>
               </div>
             </SwiperSlide>
           ))}
