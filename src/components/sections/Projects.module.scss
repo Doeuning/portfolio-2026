@@ -1,6 +1,10 @@
 .inner {
   min-width: 0;
-  padding-block: v.$spacing-xl;
+
+  :global(.swiper) {
+    padding-inline: v.$spacing-xl;
+    padding-block: v.$spacing-xl;
+  }
 }
 
 .list {
@@ -18,6 +22,9 @@
   border-radius: 8px;
   background: v.$color-white;
   box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s;
+  &:global(.swiper-slide-active) {
+  }
 }
 
 .img {

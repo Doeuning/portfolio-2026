@@ -1,17 +1,19 @@
 export interface ProjectItem {
   id: string;
-  imgUrl: string;
-  width: number;
-  bgUrl: string;
   title: string;
   desc: string;
   detail: string;
-  detail2: [string];
   period: string;
   type: string;
   role: string;
   percentage: string;
-  tags: [string];
+  tags: string[];
+  isMobile?: boolean;
+  imgUrl?: string;
+  width?: number;
+  bgUrl?: string;
+  detail2?: string[];
+  url?: string;
 }
 
 export const projectsData: ProjectItem[] = [
@@ -166,7 +168,6 @@ export const projectsData: ProjectItem[] = [
     isMobile: true,
     imgUrl: "/images/projects/logo-toyota.png",
     width: 1,
-    isLogoHorizontal: false,
     bgUrl: "/images/projects/bg-yotoyota.png",
     title: "토요타",
     desc: "고객용 하이브리드앱 신규 구축",

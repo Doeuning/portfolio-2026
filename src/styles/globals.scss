@@ -64,13 +64,18 @@ a {
 .section {
   display: flex;
   align-items: center;
+  position: relative;
   width: 100%;
   min-height: 100vh;
   height: 100vh;
   opacity: 0;
   transition: all 0.2s ease-in-out;
+
   &.active {
     opacity: 1;
+  }
+  &:not(:has(.projects-inner)) {
+    @include m.layout-center;
   }
 }
 
