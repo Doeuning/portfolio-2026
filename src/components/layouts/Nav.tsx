@@ -11,11 +11,11 @@ export default function Nav() {
   return (
     <nav className={styles.nav}>
       <Image
-        className={`${styles.img} ${activeId !== "home" ? styles.active : ""}`}
-        src="/images/profile/home.png"
+        className={`${styles.img} ${activeId === "contact" ? styles.active : ""}`}
+        src="/images/profile/contact.png"
         width={100}
         height={100}
-        alt="home"
+        alt="연락주세요"
       />
       <ul className={styles.list}>
         {navItems.map((item) => (

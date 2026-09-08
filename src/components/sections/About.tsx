@@ -18,8 +18,8 @@ export default function About({ id }: { id: string }) {
         <div className={styles.heading}>
           <span>ABOUT ME</span>
           <h2>
-            사용자와 서비스 사이를
-            <br />더 나은 웹으로 연결합니다.
+            탄탄한 기본기와 다양한 실무 경험으로 <br />
+            완성도 높은 웹을 구현합니다.
           </h2>
         </div>
 
@@ -39,7 +39,7 @@ export default function About({ id }: { id: string }) {
 
           <div className={styles.description}>
             <p>
-              튼튼한 기본기를 바탕으로, 사용자의 관점에서 고민하고 서비스의
+              탄탄한 기본기를 바탕으로, 사용자의 관점에서 고민하고 서비스의
               목적에 맞는 웹을 구현합니다.
             </p>
             <p>
