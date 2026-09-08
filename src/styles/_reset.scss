@@ -47,3 +47,17 @@ h6 {
 button {
   cursor: pointer;
 }
+
+.pc {
+  display: block;
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.mo {
+  display: none;
+  @media (max-width: 768px) {
+    display: block;
+  }
+}

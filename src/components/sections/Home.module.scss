@@ -17,3 +17,16 @@
   right: 0;
   bottom: 0;
 }
+
+@media (max-width: 768px) {
+  .inner {
+    position: static;
+    align-items: flex-start;
+    padding-block: v.$spacing-xl;
+  }
+  .img {
+    position: absolute;
+    width: 200px;
+    height: auto;
+  }
+}

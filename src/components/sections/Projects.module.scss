@@ -121,3 +121,32 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .inner {
+    width: 100%;
+    :global(.swiper) {
+      margin-inline: -(v.$spacing-md);
+      padding-inline: v.$spacing-lg;
+      padding-block: v.$spacing-md;
+    }
+  }
+  .filter {
+    width: 100%;
+    gap: 0;
+    button {
+      font-size: 16px;
+      padding: 8px 12px;
+    }
+  }
+  .img {
+    height: auto;
+    padding: v.$spacing-lg;
+  }
+  .info {
+    padding-block: v.$spacing-sm v.$spacing-lg;
+  }
+  .btn {
+    margin-top: v.$spacing-lg;
+  }
+}

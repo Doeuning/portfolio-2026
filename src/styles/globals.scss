@@ -32,6 +32,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 12px;
+  word-break: keep-all;
 }
 
 * {
@@ -76,6 +77,13 @@ a {
   }
   &:not(:has(.projects-inner)) {
     @include m.layout-center;
+  }
+  @media (max-width: 768px) {
+    flex-direction: column;
+    height: auto;
+    min-height: calc(100vh - v.$nav-height);
+    padding-block: v.$spacing-lg;
+    opacity: 1;
   }
 }
 

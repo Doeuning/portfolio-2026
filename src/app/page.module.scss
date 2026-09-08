@@ -114,7 +114,7 @@ a.secondary {
 
 @media (max-width: 600px) {
   .main {
-    padding: 48px 24px;
+    padding: v.$nav-height v.$spacing-md;
   }
 
   .intro {

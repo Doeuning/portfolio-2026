@@ -76,17 +76,22 @@ export function ActiveSectionProvider({ children }: { children: ReactNode }) {
 
   const goToSection = (id: string) => {
     if (rafId.current) cancelAnimationFrame(rafId.current);
-
     isProgrammaticScroll.current = true;
     setActiveId(id);
-
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-
+    const target = document.getElementById(id);
+    if (target) {
+      const isMobile = window.innerWidth < 768;
+      if (isMobile) {
+        const top = target.getBoundingClientRect().top + window.scrollY - 50;
+        window.scrollTo({ top, behavior: "smooth" });
+      } else {
+        target.scrollIntoView({ behavior: "smooth" });
+      }
+    }
     waitForScrollEnd(() => {
       isProgrammaticScroll.current = false;
     });
   };
-
   return (
     <ActiveSectionContext.Provider value={{ activeId, goToSection }}>
       {children}

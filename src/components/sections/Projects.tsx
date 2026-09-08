@@ -69,7 +69,7 @@ export default function Projects({ id }: { id: string }) {
         </div>
         <Swiper
           className={styles.list}
-          spaceBetween={30}
+          spaceBetween={24}
           slidesPerView={3}
           observer
           observeParents

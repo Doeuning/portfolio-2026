@@ -1,9 +1,10 @@
 .inner {
+  display: flex;
+  flex-direction: column;
+  gap: v.$spacing-xl;
 }
 
 .heading {
-  margin-bottom: 70px;
-
   span {
     font-size: 14px;
     font-weight: 700;
@@ -67,6 +68,25 @@
 
     & + p {
       margin-top: 24px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  // .inner {
+  //   padding-top: v.$spacing-lg;
+  // }
+  .content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .list {
+    grid-template-columns: 1fr;
+
+    li {
+      min-height: auto;
+      padding: 16px;
     }
   }
 }

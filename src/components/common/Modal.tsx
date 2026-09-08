@@ -73,68 +73,69 @@ export default function Modal({
 
         <div className={styles.body}>
           <div className={styles.content}>
-            <div className={styles.info}>
-              <table>
-                <colgroup>
-                  <col className={styles.labelCol} />
-                  <col />
-                  <col className={styles.labelCol} />
-                  <col />
-                </colgroup>
-                <tbody>
-                  <tr>
-                    <th>유형</th>
-                    <td>
-                      {data?.type === "maintain" ? "유지보수" : "프로젝트"}
-                    </td>
-                    <th>플랫폼</th>
-                    <td>{data?.isMobile ? "모바일" : "웹"}</td>
-                  </tr>
+            <div className={`${styles.info}`}>
+              <dl>
+                <div className={styles.item}>
+                  <dt>유형</dt>
+                  <dd>{data?.type === "maintain" ? "유지보수" : "프로젝트"}</dd>
+                </div>
 
-                  <tr>
-                    <th>역할</th>
-                    <td>{data?.role}</td>
-                    <th>참여도</th>
-                    <td>{data?.percentage}</td>
-                  </tr>
-                  <tr>
-                    <th>기간</th>
-                    <td>{data?.period}</td>
-                    <th>기술</th>
-                    <td>
-                      <div className={styles.tags}>
-                        {data?.tags.map((tag) => (
-                          <span key={tag}>{tag}</span>
+                <div className={styles.item}>
+                  <dt>플랫폼</dt>
+                  <dd>{data?.isMobile ? "모바일" : "웹"}</dd>
+                </div>
+
+                <div className={styles.item}>
+                  <dt>역할</dt>
+                  <dd>{data?.role}</dd>
+                </div>
+
+                <div className={styles.item}>
+                  <dt>참여도</dt>
+                  <dd>{data?.percentage}</dd>
+                </div>
+
+                <div className={styles.item}>
+                  <dt>기간</dt>
+                  <dd>{data?.period}</dd>
+                </div>
+
+                <div className={styles.item}>
+                  <dt>기술</dt>
+                  <dd>
+                    <div className={styles.tags}>
+                      {data?.tags.map((tag) => (
+                        <span key={tag}>{tag}</span>
+                      ))}
+                    </div>
+                  </dd>
+                </div>
+
+                <div className={`${styles.item} ${styles.full}`}>
+                  <dt>프로젝트 설명</dt>
+                  <dd>{data?.desc}</dd>
+                </div>
+
+                <div className={`${styles.item} ${styles.full}`}>
+                  <dt>담당 업무</dt>
+                  <dd>{data?.detail}</dd>
+                </div>
+
+                {data?.detail2 && (
+                  <div className={`${styles.item} ${styles.full}`}>
+                    <dt>주요 업무</dt>
+                    <dd>
+                      <ul className={styles.detailList}>
+                        {data.detail2.map((item, index) => (
+                          <li key={index}>{item}</li>
                         ))}
-                      </div>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <th>프로젝트 설명</th>
-                    <td colSpan={3}>{data?.desc}</td>
-                  </tr>
-
-                  <tr>
-                    <th>담당 업무</th>
-                    <td colSpan={3}>{data?.detail}</td>
-                  </tr>
-
-                  {data?.detail2 && (
-                    <tr>
-                      <th>주요 업무</th>
-                      <td colSpan={3}>
-                        <ul className={styles.detailList}>
-                          {data.detail2.map((item, index) => (
-                            <li key={index}>{item}</li>
-                          ))}
-                        </ul>
-                      </td>
-                    </tr>
-                  )}
-                </tbody>
-              </table>
+                      </ul>
+                    </dd>
+                  </div>
+                )}
+              </dl>
             </div>
+
             {data?.bgUrl && (
               <div className={styles.img}>
                 <Image

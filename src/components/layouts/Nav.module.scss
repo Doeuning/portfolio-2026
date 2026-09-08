@@ -81,10 +81,12 @@
   .nav {
     position: fixed;
     top: 0;
+    right: 0;
     left: 0;
     width: 100%;
     height: v.$nav-height;
     transform: none;
+    overflow-x: auto;
     &::after {
       display: block;
       content: "";
@@ -99,11 +101,17 @@
   }
   .list {
     flex-direction: row;
-    justify-content: center;
   }
   .button {
     &::after {
-      transform: translateY(-100%);
+      transform: translate(0, -100%);
+      opacity: 0;
+    }
+  }
+  .active {
+    &::after {
+      transform: translate(0, 0);
+      opacity: 1;
     }
   }
 }

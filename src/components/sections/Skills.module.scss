@@ -44,3 +44,18 @@
 .logo {
   width: auto !important;
 }
+
+@media (max-width: 768px) {
+  .inner {
+    flex-direction: column;
+    gap: v.$spacing-lg;
+  }
+  .list {
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    gap: v.$spacing-md;
+  }
+  .item {
+    justify-content: center;
+  }
+}

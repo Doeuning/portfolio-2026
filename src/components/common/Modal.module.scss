@@ -118,41 +118,36 @@
 }
 
 .info {
-  width: 100%;
-
-  table {
-    width: 100%;
-    table-layout: fixed;
-    border-collapse: collapse;
+  dl {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     border-top: 2px solid v.$color-black;
-    font-size: 14px;
   }
 
-  tr {
-    border-bottom: 1px solid v.$color-gray-300;
-  }
+  .item {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    border-bottom: 1px solid v.$color-gray-200;
 
-  th,
-  td {
-    padding: 16px 20px;
-    text-align: left;
-    vertical-align: top;
-    line-height: 1.6;
-  }
+    dt,
+    dd {
+      padding: 16px 20px;
+      line-height: 1.6;
+    }
 
-  th {
-    width: 120px;
-    background: v.$color-gray-900;
-    font-weight: 700;
-    white-space: nowrap;
-  }
-  .labelCol {
-    width: 120px;
-  }
+    dt {
+      background: v.$color-gray-900;
+      font-weight: 700;
+      white-space: nowrap;
+    }
 
-  td {
-    font-weight: 400;
-    white-space: pre-line;
+    dd {
+      margin: 0;
+    }
+
+    &.full {
+      grid-column: 1 / -1;
+    }
   }
 }
 
@@ -163,13 +158,12 @@
 
   span {
     display: inline-flex;
-    align-items: center;
-    border-radius: 4px;
     padding: 4px 8px;
+    border-radius: 4px;
     background: v.$color-gray-100;
+    color: v.$color-white;
     font-size: 12px;
     font-weight: 600;
-    color: v.$color-white;
   }
 }
 
@@ -186,9 +180,9 @@
     padding-left: 14px;
 
     &::before {
-      content: "•";
       position: absolute;
       left: 0;
+      content: "•";
       font-weight: 700;
     }
   }
@@ -196,12 +190,14 @@
 
 @media (max-width: 768px) {
   .modal {
-    padding: 16px;
+    padding: 0;
   }
 
   .wrap {
-    max-height: 90vh;
-    border-radius: 12px;
+    width: 100vw;
+    max-height: 100vh;
+    height: 100vh;
+    border-radius: 0;
   }
 
   .header {
@@ -210,5 +206,26 @@
 
   .body {
     padding: 20px;
+  }
+  .content {
+    flex-direction: column;
+  }
+  .info {
+    dl {
+      display: block;
+    }
+
+    .item,
+    .item.full {
+      display: grid;
+      grid-template-columns: 94px 1fr;
+    }
+
+    .item {
+      dt,
+      dd {
+        padding: 12px;
+      }
+    }
   }
 }
