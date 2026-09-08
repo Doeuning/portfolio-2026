@@ -1,20 +1,29 @@
 "use client";
 
-import { projectsData } from "@/data/projects";
-import Section from "@/components/layouts/Section";
-import styles from "./Projects.module.scss";
+import { useState } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import { useState } from "react";
+
+import { projectsData } from "@/data/projects";
+import Section from "@/components/layouts/Section";
 import Modal from "@/components/common/Modal";
+import styles from "./Projects.module.scss";
+
+type FilterType = "all" | "project" | "maintain";
 
 export default function Projects({ id }: { id: string }) {
+  const [filter, setFilter] = useState<FilterType>("all");
   const [selectedProject, setSelectedProject] = useState<
     (typeof projectsData)[number] | null
   >(null);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const filteredProjects =
+    filter === "all"
+      ? projectsData
+      : projectsData.filter((project) => project.type === filter);
 
   const handleOpenModal = (project: (typeof projectsData)[number]) => {
     setSelectedProject(project);
@@ -31,10 +40,40 @@ export default function Projects({ id }: { id: string }) {
   return (
     <Section id={id}>
       <div className={`${styles.inner} projects-inner`}>
+        <div className={styles.filter}>
+          {" "}
+          <button
+            type="button"
+            className={filter === "all" ? styles.active : ""}
+            onClick={() => setFilter("all")}
+          >
+            {" "}
+            ALL{" "}
+          </button>{" "}
+          <button
+            type="button"
+            className={filter === "project" ? styles.active : ""}
+            onClick={() => setFilter("project")}
+          >
+            {" "}
+            PROJECT{" "}
+          </button>{" "}
+          <button
+            type="button"
+            className={filter === "maintain" ? styles.active : ""}
+            onClick={() => setFilter("maintain")}
+          >
+            {" "}
+            MAINTENANCE{" "}
+          </button>{" "}
+        </div>
         <Swiper
           className={styles.list}
           spaceBetween={30}
           slidesPerView={3}
+          observer
+          observeParents
+          speed={0}
           breakpoints={{
             0: {
               slidesPerView: 1,
@@ -42,19 +81,27 @@ export default function Projects({ id }: { id: string }) {
             1079: {
               slidesPerView: 3,
             },
+            1199: {
+              slidesPerView: 3,
+            },
           }}
         >
-          {projectsData.map((project) => (
+          {filteredProjects.map((project) => (
             <SwiperSlide key={project.id} className={styles.item}>
               <div className={styles.img}>
-                {project.bgUrl && (
+                {project.imgUrl ? (
                   <Image
-                    src={project.bgUrl}
+                    src={project.imgUrl}
                     alt={project.title}
-                    width={100}
+                    width={(project.width ?? 1) * 100}
                     height={100}
                     className={styles.bg}
+                    quality={100}
                   />
+                ) : (
+                  <div className={styles.noImage}>
+                    <span>PROJECT</span>
+                  </div>
                 )}
               </div>
               <div className={styles.info}>
@@ -78,9 +125,8 @@ export default function Projects({ id }: { id: string }) {
         onClose={handleCloseModal}
         onCloseComplete={handleCloseComplete}
         title={selectedProject?.title}
-      >
-        {selectedProject && <p>{selectedProject.desc}</p>}
-      </Modal>
+        data={selectedProject}
+      ></Modal>
     </Section>
   );
 }

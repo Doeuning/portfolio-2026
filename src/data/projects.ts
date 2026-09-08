@@ -27,6 +27,8 @@ export const projectsData: ProjectItem[] = [
     detail:
       "Vue3, Nuxt3, scss등을 이용하여 진행한 프로젝트로, 상품쪽 전반, 회원, 회사소개 등 페이지를 담당했습니다. ",
     detail2: [
+      "퍼블리싱 가이드 제작 및 상품, 회원, 회사소개 등의 페이지 퍼블리싱",
+      "모바일 컴포넌트 구조 작업",
       "퍼블리싱한 페이지에 기능 개발을 적용하는 과정에서 발생한 레이아웃 및 UI 깨짐 현상 분석 및 수정",
       "개발 적용 과정에서 발생한 이벤트, 데이터 바인딩 및 인터랙션 오류 디버깅",
       "기존 'HTML/CSS' 구조와 개발 기능 간 충돌을 분석하고 컴포넌트 및 스타일 구조를 재정비",
@@ -41,7 +43,7 @@ export const projectsData: ProjectItem[] = [
   {
     id: "groupware",
     imgUrl: "/images/projects/logo-emotion.svg",
-    width: 3,
+    width: 2,
     bgUrl: "/images/projects/bg-emotion.png",
     title: "이모션 사내 그룹웨어",
     desc: "반응형 웹사이트 신규 구축",
@@ -61,7 +63,7 @@ export const projectsData: ProjectItem[] = [
     title: "아난티 온라인 커머스 플랫폼",
     desc: "반응형 웹사이트 신규 구축",
     detail:
-      "고객의 니즈에 맞추어 일반적인 웹사이트와 다르게 매거진 형태의 디자인으로 작업한 프로젝트입니다. 특히 'INSIGHT' 페이지의 첫 세 페이지는 프로젝트 구축 이후 추가 작업 건으로, gsap를 이용해 화려한 인터렉션을 구축했습니다.",
+      "고객의 니즈에 맞추어 일반적인 웹사이트와 다르게 매거진 형태의 디자인으로 작업한 프로젝트입니다. \n 특히 'INSIGHT' 페이지의 첫 세 페이지는 프로젝트 구축 이후 추가 작업 건으로, gsap를 이용해 페이지 스크롤에 따라 변화하는 화려한 인터렉션을 구축했습니다.",
     period: "2021.06~2021.12",
     url: "https://eternaljourney.ananti.kr/index",
     type: "project",
@@ -73,7 +75,7 @@ export const projectsData: ProjectItem[] = [
     id: "hanafind",
     isMobile: true,
     imgUrl: "/images/projects/logo-fingle.png",
-    width: 2,
+    width: 1,
     bgUrl: "/images/projects/bg-fingle.png",
     title: "하나금융 파트너 인슈어테크 플랫폼",
     desc: "적응형 앱/웹/모바일웹 신규 구축",

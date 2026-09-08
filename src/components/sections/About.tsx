@@ -10,9 +10,13 @@ export default function About({ id }: { id: string }) {
           <li>신규구축</li>
           <li>유지보수</li>
           <li>부분 리뉴얼</li>
+          <li>반응형</li>
+          <li>적응형</li>
+          <li>하이브리드앱</li>
         </ul>
         <div>
-          사용자의 관점에서 고민하고, 서비스의 목적에 맞는 웹을 구현합니다.
+          튼튼한 기본기를 바탕으로, 사용자의 관점에서 고민하고 서비스의 목적에
+          맞는 웹을 구현합니다.
           <br />
           HTML, CSS, JavaScript를 기반으로 다양한 웹 서비스를 구축해왔으며,
           React와 Vue를 활용한 컴포넌트 기반 개발에도 익숙합니다.
