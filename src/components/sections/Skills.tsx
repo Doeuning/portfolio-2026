@@ -45,6 +45,11 @@ export default function Skills({ id }: { id: string }) {
               <dd className={styles.dd}>
                 Git, svn등의 형상관리 시스템 기반의 협업 경험
               </dd>
+              <dt className={styles.dt}>효율적인 작업방식 추구</dt>
+              <dd className={styles.dd}>
+                팀원들과 생산적인 토론으로 신속성, 정확성, 효율성을 최대화한
+                작업 방식을 추구
+              </dd>
             </dl>
           </div>
         </div>
