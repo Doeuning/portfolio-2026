@@ -11,7 +11,7 @@ export default function Nav() {
   const listRef = useRef<HTMLUListElement>(null);
 
   useEffect(() => {
-    if (window.innerWidth > 767) return;
+    if (window.innerWidth >= 768) return;
 
     const activeButton = listRef.current?.querySelector(
       `.${styles.active}`,
