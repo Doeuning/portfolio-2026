@@ -9,6 +9,7 @@ export default function Skills({ id }: { id: string }) {
       <div className={styles.inner}>
         <div>
           <div className={styles.info}>
+            <div className={styles.tit}>Skills</div>
             <dl className={styles.dl}>
               <dt className={styles.dt}>컴포넌트 기반 개발</dt>
               <dd className={styles.dd}>
@@ -58,119 +59,146 @@ export default function Skills({ id }: { id: string }) {
             <Image
               src="/images/skills/skills-html.svg"
               alt="HTML"
-              width={100}
-              height={100}
+              width={80}
+              height={80}
             />
-            <span className="hidden">HTML</span>
+            <span className={styles.txt}>HTML5</span>
           </li>
           <li className={styles.item}>
             <Image
               src="/images/skills/skills-css.svg"
               alt="CSS"
-              width={100}
-              height={100}
+              width={80}
+              height={80}
             />
-            <span className="hidden">CSS</span>
+            <span className={styles.txt}>CSS3</span>
           </li>
           <li className={styles.item}>
             <Image
               src="/images/skills/skills-scss.svg"
               alt="SCSS"
-              width={100}
-              height={100}
+              width={80}
+              height={80}
             />
-            <span className="hidden">SCSS</span>
+            <span className={styles.txt}>SCSS</span>
           </li>
           <li className={styles.item}>
             <Image
               src="/images/skills/skills-javascript.svg"
               alt="JavaScript"
-              width={100}
-              height={100}
+              width={80}
+              height={80}
             />
-            <span className="hidden">JavaScript</span>
+            <span className={styles.txt}>JavaScript</span>
           </li>
           <li className={styles.item}>
             <Image
               src="/images/skills/skills-typescript.svg"
               alt="TypeScript"
-              width={100}
-              height={100}
+              width={80}
+              height={80}
             />
-            <span className="hidden">TypeScript</span>
+            <span className={styles.txt}>TypeScript</span>
           </li>
           <li className={styles.item}>
             <Image
               src="/images/skills/skills-jquery.svg"
               alt="jQuery"
-              width={100}
-              height={100}
+              width={80}
+              height={80}
             />
-            <span className="hidden">jQuery</span>
+            <span className={styles.txt}>jQuery</span>
           </li>
           <li className={styles.item}>
             <Image
               src="/images/skills/skills-nodejs.svg"
               alt="Nodejs"
-              width={100}
-              height={100}
+              width={80}
+              height={80}
             />
-            <span className="hidden">Nodejs</span>
+            <span className={styles.txt}>Nodejs</span>
           </li>
           <li className={styles.item}>
             <Image
               src="/images/skills/skills-npm.svg"
               alt="npm"
-              width={100}
-              height={100}
+              width={80}
+              height={80}
             />
-            <span className="hidden">npm</span>
+            <span className={styles.txt}>npm</span>
           </li>
           <li className={styles.item}>
             <Image
               src="/images/skills/skills-git.svg"
               alt="git"
-              width={100}
-              height={100}
+              width={80}
+              height={80}
             />
-            <span className="hidden">git</span>
+            <span className={styles.txt}>git</span>
           </li>
           <li className={styles.item}>
             <Image
               src="/images/skills/skills-react.svg"
               alt="React"
-              width={100}
-              height={100}
+              width={80}
+              height={80}
             />
-            <span className="hidden">React</span>
+            <span className={styles.txt}>React</span>
           </li>
           <li className={styles.item}>
             <Image
               src="/images/skills/skills-vue.svg"
               alt="Vue3"
-              width={100}
-              height={100}
+              width={80}
+              height={80}
             />
-            <span className="hidden">Vue3</span>
+            <span className={styles.txt}>Vue3</span>
           </li>
           <li className={styles.item}>
             <Image
               src="/images/skills/skills-nuxtjs.svg"
               alt="Next.js"
-              width={100}
-              height={100}
+              width={80}
+              height={80}
             />
-            <span className="hidden">Nuxtjs</span>
+            <span className={styles.txt}>Nuxtjs</span>
+          </li>
+          <li className={styles.item}>
+            <Image
+              src="/images/skills/skills-photoshop.svg"
+              alt="Photoshop"
+              width={80}
+              height={80}
+            />
+            <span className={styles.txt}>Photoshop</span>
+          </li>
+          <li className={styles.item}>
+            <Image
+              src="/images/skills/skills-zeplin.svg"
+              alt="Zeplin"
+              width={80}
+              height={80}
+            />
+            <span className={styles.txt}>Zeplin</span>
+          </li>
+          <li className={styles.item}>
+            <Image
+              src="/images/skills/skills-figma.svg"
+              alt="Figma"
+              width={80}
+              height={80}
+            />
+            <span className={styles.txt}>Figma</span>
           </li>
           {/* <li className={styles.item}>
             <Image
               src="/images/skills/skills-gsap.png"
               alt="GSAP"
-              width={100}
-              height={100}
+              width={80}
+              height={80}
               className={styles.logo}
             />
-            <span className="hidden">GSAP</span>
+            <span className={styles.txt}>GSAP</span>
           </li> */}
         </ul>
       </div>

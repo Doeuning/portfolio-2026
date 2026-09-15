@@ -29,9 +29,7 @@
   // background-color: var(--foreground);
   // padding: 120px 60px;
   @media (max-width: 768px) {
-    & {
-      padding-left: 0;
-    }
+    padding-inline: v.$spacing-md;
   }
 }
 

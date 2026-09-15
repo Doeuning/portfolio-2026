@@ -86,7 +86,7 @@
     width: 100%;
     height: v.$nav-height;
     transform: none;
-    overflow-x: auto;
+
     &::after {
       display: block;
       content: "";
@@ -101,6 +101,11 @@
   }
   .list {
     flex-direction: row;
+    overflow-y: hidden;
+    overflow-x: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
   .button {
     &::after {

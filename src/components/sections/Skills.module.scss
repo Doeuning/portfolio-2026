@@ -1,19 +1,26 @@
 .inner {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: row-reverse;
   justify-content: space-around;
+  gap: v.$spacing-lg;
   position: relative;
   width: 100%;
+  padding-block: v.$spacing-lg;
 }
 
 .info {
   margin-top: v.$spacing-md;
 }
 
+.tit {
+  font-size: 36px;
+  margin-bottom: v.$spacing-lg;
+}
+
 .list {
   display: grid;
-  grid-template-columns: repeat(3, max-content);
+  grid-template-columns: repeat(4, max-content);
   gap: v.$spacing-lg;
   list-style: none;
   padding: 0;
@@ -32,13 +39,21 @@
 
 .item {
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   img {
     height: auto;
   }
   // &:last-child {
   //   grid-column: 1 / -1;
   // }
+}
+.txt {
+  display: block;
+  margin-top: v.$spacing-sm;
+  font-weight: 700;
+  font-size: 16px;
 }
 
 .logo {
