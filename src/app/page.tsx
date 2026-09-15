@@ -16,8 +16,8 @@ export default function Page() {
         <main className={styles.main}>
           <Home id="home" />
           <About id="about" />
-          <Skills id="skills" />
           <Experience id="experience" />
+          <Skills id="skills" />
           <Projects id="projects" />
           <Contact id="contact" />
         </main>

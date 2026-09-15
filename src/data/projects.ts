@@ -53,7 +53,7 @@ export const projectsData: ProjectItem[] = [
     type: "project",
     role: "PA",
     percentage: "30%",
-    tags: ["React", "Next.js", "Styled Component", "Axios"],
+    tags: ["React", "Next.js", "Styled Component", "scss"],
   },
   {
     id: "ananti",
@@ -69,7 +69,7 @@ export const projectsData: ProjectItem[] = [
     type: "project",
     role: "PA",
     percentage: "40%",
-    tags: ["jQuery", "gsap"],
+    tags: ["jQuery", "gsap", "scss"],
   },
   {
     id: "hanafind",
@@ -112,12 +112,13 @@ export const projectsData: ProjectItem[] = [
     desc: "웹/모바일웹 쇼핑몰 사이트 신규 구축",
     detail:
       "신세계 사이트와 통합해서 사용하려는 고객의 목적에 따라 클래스명이 중복되지 않도록 주의를 기울여 작업한 프로젝트입니다. 고객사에 파견을 나가 타회사의 외주 개발자들과 협력해서 작업했습니다. 저는 전반적인 퍼블리싱 가이드 작성 및 상품상세, 리뷰 등을 담당했습니다.",
+    detail2: ["퍼블리싱 가이드 작성", "상품상세, 리뷰 등 퍼블리싱"],
     period: "2020.12~2021.06",
     url: "https://www.sivillage.com/jaju/main/initMain.siv",
     type: "project",
     role: "PA",
     percentage: "30%",
-    tags: ["jQuery"],
+    tags: ["jQuery", "scss"],
   },
   {
     id: "wells",
@@ -133,7 +134,7 @@ export const projectsData: ProjectItem[] = [
     type: "project",
     role: "PA",
     percentage: "40%",
-    tags: ["jQuery"],
+    tags: ["jQuery", "scss"],
   },
   {
     id: "toyota_compliments",
