@@ -1,0 +1,64 @@
+.toggle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 52px;
+  height: 28px;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 0 6px;
+  background: var(--color-surface-alt);
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.icon {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  font-size: 13px;
+  line-height: 1;
+  opacity: 0.4;
+  transition: opacity 0.3s ease-in-out;
+
+  &[data-icon="sun"] {
+    color: #f5a623;
+    margin-right: auto;
+  }
+  &[data-icon="moon"] {
+    color: var(--color-text-secondary);
+    margin-left: auto;
+  }
+}
+
+.knob {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  transition: transform 0.3s ease-in-out;
+}
+
+.toggle[aria-checked="true"] {
+  .knob {
+    transform: translateX(24px);
+  }
+  .icon[data-icon="moon"] {
+    opacity: 1;
+  }
+  .icon[data-icon="sun"] {
+    opacity: 0.4;
+  }
+}
+
+.toggle[aria-checked="false"] {
+  .icon[data-icon="sun"] {
+    opacity: 1;
+  }
+}

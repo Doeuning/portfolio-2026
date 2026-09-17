@@ -2,6 +2,7 @@
 
 import { navItems } from "@/data/navigation";
 import { useActiveSection } from "@/contexts/ActiveSectionContext";
+import ThemeToggle from "@/components/common/ThemeToggle";
 import styles from "./Nav.module.scss";
 import Image from "next/image";
 import { useEffect } from "react";
@@ -39,33 +40,39 @@ export default function Nav() {
   }, [activeId]);
 
   return (
-    <nav className={styles.nav}>
-      <Image
-        className={`${styles.img} ${
-          activeId === "contact" ? styles.active : ""
-        }`}
-        src="/images/profile/contact.png"
-        width={100}
-        height={100}
-        alt="연락주세요"
-      />
+    <>
+      <div className={styles.themeToggle}>
+        <ThemeToggle />
+      </div>
 
-      <ul className={styles.list}>
-        {navItems.map((item) => (
-          <li key={item.id}>
-            <button
-              type="button"
-              data-nav-id={item.id}
-              className={`${styles.button} ${
-                activeId === item.id ? styles.active : ""
-              }`}
-              onClick={() => goToSection(item.id)}
-            >
-              {item.label}
-            </button>
-          </li>
-        ))}
-      </ul>
-    </nav>
+      <nav className={styles.nav}>
+        <Image
+          className={`${styles.img} ${
+            activeId === "contact" ? styles.active : ""
+          }`}
+          src="/images/profile/contact.png"
+          width={100}
+          height={100}
+          alt="연락주세요"
+        />
+
+        <ul className={styles.list}>
+          {navItems.map((item) => (
+            <li key={item.id}>
+              <button
+                type="button"
+                data-nav-id={item.id}
+                className={`${styles.button} ${
+                  activeId === item.id ? styles.active : ""
+                }`}
+                onClick={() => goToSection(item.id)}
+              >
+                {item.label}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </>
   );
 }
