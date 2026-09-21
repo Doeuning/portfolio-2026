@@ -14,6 +14,7 @@ export interface ProjectItem {
   bgUrl?: string;
   detail2?: string[];
   url?: string;
+  featured?: boolean;
 }
 
 export const projectsData: ProjectItem[] = [
@@ -23,22 +24,25 @@ export const projectsData: ProjectItem[] = [
     width: 3,
     bgUrl: "/images/projects/bg-hanjintravel.png",
     title: "한진트래블 웹사이트 신규 구축",
-    desc: "적응형 웹사이트 신규 구축",
+    desc: "FO 적응형(PC/Mobile) · BO 반응형 웹사이트 신규 구축",
     detail:
-      "Vue3, Nuxt3, scss등을 이용하여 진행한 프로젝트로, 상품쪽 전반, 회원, 회사소개 등 페이지를 담당했습니다. ",
+      "FO(PC/Mobile 적응형)와 BO(반응형)를 함께 구축한 프로젝트입니다. FO는 퍼블리싱을 선행한 뒤 백엔드 개발자가 Vue3 프로젝트로 이식하며 기능을 입히는 방식으로 진행되어, 퍼블리싱 품질은 물론 이식 이후의 화면 완성도까지 책임지는 역할을 맡았습니다. BO는 선행 개발자가 제작한 공통 컴포넌트를 이어받아 운영했습니다.",
     detail2: [
-      "퍼블리싱 가이드 제작 및 상품, 회원, 회사소개 등의 페이지 퍼블리싱",
-      "모바일 컴포넌트 구조 작업",
-      "퍼블리싱한 페이지에 기능 개발을 적용하는 과정에서 발생한 레이아웃 및 UI 깨짐 현상 분석 및 수정",
-      "개발 적용 과정에서 발생한 이벤트, 데이터 바인딩 및 인터랙션 오류 디버깅",
-      "기존 'HTML/CSS' 구조와 개발 기능 간 충돌을 분석하고 컴포넌트 및 스타일 구조를 재정비",
-      "기능 구현 이후 발생한 크로스 브라우저 및 반응형 UI 문제를 점검하여 최종 페이지 완성도 및 안정성 개선",
+      "퍼블리싱 가이드를 제작하고, 상품·회원·회사소개·고객센터 등 서비스 핵심 페이지의 퍼블리싱 담당",
+      "상품, 목록 등 반복되는 UI를 재사용 가능한 공통 모듈로 설계하고 BEM 기반으로 스타일 체계화",
+      "협업 퍼블리셔의 작업물을 검수하며 공통 모듈 사용을 설득해, 페이지별 개별 스타일을 최소화하고 프로젝트 전반의 스타일 일관성과 유지보수성 확보",
+      "Vue3 이식 과정에서 마크업 구조 변경으로 깨진 UI와 인터랙션의 원인을 분석해 디버깅·보수하고, 레이아웃·크로스 브라우저·반응형 이슈를 전수 점검",
+      "이식 이후 인터랙션을 구현하고, 데이터가 없는 상황에서도 페이지 오류가 발생하지 않도록 예외처리해 화면 안정성 확보",
+      "지점·브랜드별로 모바일 헤더 노출 요소가 상이한 요구사항에 대응하여, 사이트 코드 기준으로 구성이 분기되는 모바일 헤더 레이아웃 전체를 직접 설계·구현",
+      "BO: 선행 프론트엔드 개발자 철수 이후 공통 컴포넌트를 이어받아, 페이지 적용 시 필요한 옵션 추가 및 오류 수정 담당",
+      "기획자·디자이너·백엔드 개발자와 협업하며 감정 소모 없이 원인 파악과 해결에 집중하는 커뮤니케이션으로 이슈를 신속하게 해결",
     ],
     period: "2025.04~2026.04",
     type: "project",
     role: "PA",
     percentage: "40%",
-    tags: ["Vue3", "Nuxt3", "scss"],
+    tags: ["Vue3", "Nuxt3", "scss", "BEM"],
+    featured: true,
   },
   {
     id: "groupware",
@@ -46,14 +50,20 @@ export const projectsData: ProjectItem[] = [
     width: 2,
     bgUrl: "/images/projects/bg-emotion.png",
     title: "이모션 사내 그룹웨어",
-    desc: "반응형 웹사이트 신규 구축",
+    desc: "Next를 이용한 반응형 웹사이트 신규 구축",
     detail:
-      "React, Next.js, Styled Component 등을 사용하여 진행한 내부 프로젝트로, 기존에 사용하던 딱딱하고 사용하기 복잡한 그룹웨어를 사용하기 쉽고 보기 좋게 리뉴얼했습니다. 직원 목록, 등록, 수정, 상세 페이지 등의 프론트를 담당해 작업했습니다.",
+      "딱딱하고 사용하기 복잡했던 기존 사내 그룹웨어를 사용하기 쉽고 보기 좋게 리뉴얼한 내부 프로젝트입니다. React, Next.js, Styled Component를 기반으로 직원 관리 영역의 프론트엔드를 담당했습니다.",
+    detail2: [
+      "React, Next.js 기반으로 직원 목록, 등록, 수정, 상세 페이지 프론트엔드 개발",
+      "Styled Component를 활용한 컴포넌트 단위 스타일 구성",
+      "복잡했던 기존 그룹웨어를 사용하기 쉽고 보기 좋은 UI로 리뉴얼",
+    ],
     period: "2021.11~2022.03",
     type: "project",
     role: "PA",
     percentage: "30%",
     tags: ["React", "Next.js", "Styled Component", "scss"],
+    featured: true,
   },
   {
     id: "ananti",
@@ -61,26 +71,38 @@ export const projectsData: ProjectItem[] = [
     width: 3,
     bgUrl: "/images/projects/bg-ananti.png",
     title: "아난티 온라인 커머스 플랫폼",
-    desc: "반응형 웹사이트 신규 구축",
+    desc: "매거진형 반응형 웹사이트 신규 구축",
     detail:
-      "고객의 니즈에 맞추어 일반적인 웹사이트와 다르게 매거진 형태의 디자인으로 작업한 프로젝트입니다. \n 특히 'INSIGHT' 페이지의 첫 세 페이지는 프로젝트 구축 이후 추가 작업 건으로, gsap를 이용해 페이지 스크롤에 따라 변화하는 화려한 인터렉션을 구축했습니다.",
+      "브랜드의 고급스러운 이미지에 맞는 디자인을 요구받아, 기존 웹사이트와 차별화된 매거진형으로 구축한 반응형 프로젝트입니다. 일반적인 구조에서 벗어난 디자인을 정확히 구현하기 위해 퍼블리싱 방식도 특화해 작업했고, 그중 가장 난도가 높은 INSIGHT 메뉴의 페이지들을 담당했습니다.",
+    detail2: [
+      "퍼블리싱 가이드를 제작하고, 다수 페이지를 Mobile·PC viewport에 맞춰 반응형으로 퍼블리싱",
+      "매거진형 레이아웃의 감도를 살리기 위해 일반 웹사이트와 다른 방식으로 마크업·스타일 구조를 설계",
+      "INSIGHT 메뉴에서 난도가 가장 높은 페이지(구축 이후 추가된 작업 건 포함)를 담당하여, GSAP으로 스크롤에 따라 요소가 이동·변형되고 생성·제거되는 모션 구현",
+      "디자이너, 고객과 직접 소통하며 요구사항과 피드백을 모션의 타이밍과 디테일에 반영해 브랜드 이미지에 맞는 결과물로 완성",
+      "원활한 의사소통과 빠른 피드백 반영으로 디자이너와 고객 모두의 만족을 이끌어냄",
+    ],
     period: "2021.06~2021.12",
     url: "https://eternaljourney.ananti.kr/index",
     type: "project",
     role: "PA",
     percentage: "40%",
     tags: ["jQuery", "gsap", "scss"],
+    featured: true,
   },
   {
     id: "hanafind",
     isMobile: true,
     imgUrl: "/images/projects/logo-fingle.png",
-    width: 1,
+    width: 2,
     bgUrl: "/images/projects/bg-fingle.png",
     title: "하나금융 파트너 인슈어테크 플랫폼",
     desc: "적응형 앱/웹/모바일웹 신규 구축",
     detail:
-      "Vue를 이용해 B2B, B2C, 마이크로 사이트를 작업했습니다. B2B, B2C의 포스트 게시판의 목록, 등록, 수정, 상세 페이지의 프론트 작업을 도맡았습니다. 해당 페이지의 전반적인 기능 및 데이터 바인딩까지 마무리했습니다. 마이크로 사이트 또한 직접 프로젝트 구성부터 마무리까지 담당했습니다.",
+      "앱, 웹, 모바일웹을 아우르는 적응형 인슈어테크 플랫폼으로, Vue를 기반으로 B2B, B2C, 마이크로 사이트 프론트엔드를 구축했습니다.",
+    detail2: [
+      "마이크로 사이트의 프로젝트 구성부터 마무리까지 전 과정을 직접 담당",
+      "B2B, B2C 포스트 게시판의 목록, 등록, 수정, 상세 페이지를 마크업, UI, 데이터 바인딩까지 프론트엔드 전반을 도맡아 구현",
+    ],
     period: "2021.11~2022.05",
     type: "project",
     role: "PA",
@@ -95,7 +117,7 @@ export const projectsData: ProjectItem[] = [
     title: "T World Direct Shop",
     desc: "운영 유지보수",
     detail:
-      "통신 서비스 관련 이벤트 위주로 퍼블리싱 했습니다. 특히 해당 기간에 릴리즈 된 애플, 삼성의 신제품 관련 기획전, 이벤트 등을 작업할 때는 짧은 시간 내에 상당히 긴 페이지를 작업해서 개발에 넘겨야 했기 때문에 신속하고 정확한 업무스킬을 필요로 했습니다. ",
+      "통신 서비스 관련 이벤트 퍼블리싱을 전담한 운영 프로젝트입니다. 애플, 삼성 신제품 출시 시기의 기획전과 이벤트처럼 촉박한 일정에 분량이 많은 페이지를 신속하고 정확하게 작업해 개발에 전달했습니다.",
     period: "2021.06~2021.11",
     url: "https://shop.tworld.co.kr/shop/main",
     type: "maintain",
@@ -111,8 +133,12 @@ export const projectsData: ProjectItem[] = [
     title: "JAJU",
     desc: "웹/모바일웹 쇼핑몰 사이트 신규 구축",
     detail:
-      "신세계 사이트와 통합해서 사용하려는 고객의 목적에 따라 클래스명이 중복되지 않도록 주의를 기울여 작업한 프로젝트입니다. 고객사에 파견을 나가 타회사의 외주 개발자들과 협력해서 작업했습니다. 저는 전반적인 퍼블리싱 가이드 작성 및 상품상세, 리뷰 등을 담당했습니다.",
-    detail2: ["퍼블리싱 가이드 작성", "상품상세, 리뷰 등 퍼블리싱"],
+      "신세계 사이트와 통합 사용을 전제로 구축한 쇼핑몰 프로젝트입니다. 고객사에 파견되어 타 회사의 외주 개발자들과 협업하며 퍼블리싱 가이드 작성과 핵심 페이지 퍼블리싱을 담당했습니다.",
+    detail2: [
+      "퍼블리싱 가이드 작성 및 상품상세, 리뷰 등 페이지 퍼블리싱",
+      "신세계 사이트와의 통합에 대비해 클래스명이 중복되지 않도록 관리",
+      "고객사에 파견되어 타 회사의 외주 개발자들과 협업",
+    ],
     period: "2020.12~2021.06",
     url: "https://www.sivillage.com/jaju/main/initMain.siv",
     type: "project",
@@ -128,7 +154,11 @@ export const projectsData: ProjectItem[] = [
     title: "교원웰스",
     desc: "웹/모바일웹 사이트 신규 구축",
     detail:
-      "브랜드스토리, 제품 카테고리 등 인터렉션이 필요한 페이지들을 위주로 담당해 퍼블리싱 및 스크립트 작업했습니다. 3~4명의 퍼블리싱 인원이 투입되었는데, 막바지에는 제가 남아 오류 및 수정사항 반영 등 잔여작업을 맡아 프로젝트를 잘 마무리했습니다.",
+      "교원웰스 사이트를 신규 구축한 프로젝트로, 인터랙션이 필요한 주요 페이지를 중심으로 담당했습니다.",
+    detail2: [
+      "브랜드스토리, 제품 카테고리 등 인터랙션이 필요한 페이지의 퍼블리싱 및 스크립트 작업",
+      "퍼블리셔 3~4명이 투입된 프로젝트에서 마지막까지 남아 오류 및 수정사항 반영 등 잔여 작업을 맡아 마무리",
+    ],
     period: "2020.06~2020.11",
     url: "http://www.kyowonwells.com/",
     type: "project",
@@ -140,9 +170,10 @@ export const projectsData: ProjectItem[] = [
     id: "toyota_compliments",
     imgUrl: "/images/projects/logo-toyota.png",
     width: 1,
-    title: "토요타",
+    title: "토요타 직원용 칭찬시스템",
     desc: "직원용 칭찬시스템 웹/모바일웹 사이트 신규 구축",
-    detail: "전체 페이지 퍼블리싱 및 UI 스크립트를 작성했습니다.",
+    detail:
+      "토요타 직원용 칭찬시스템을 웹/모바일웹으로 신규 구축한 프로젝트로, 전체 페이지 퍼블리싱과 UI 스크립트를 단독으로 담당했습니다.",
     period: "2019.09~2019.11",
     type: "project",
     role: "PL",
@@ -158,13 +189,17 @@ export const projectsData: ProjectItem[] = [
     title: "GC IMED",
     desc: "모바일 웹 사이트 신규 구축",
     detail:
-      "Safari, Chrome, 삼성 인터넷, 카카오톡 웹브라우저, 샤오미 웹브라우저 등 모든 모바일기기에서 이상없이 작동하도록 퍼블리싱했습니다. 전체 200페이지 이상 되는 프로젝트를 SCSS를 이용해 빠르고 효율적으로 작업해 기존 일정보다 앞당겨 완료했습니다.",
+      "200페이지 이상 규모의 모바일 웹사이트를 SCSS 기반으로 단독 퍼블리싱해, 기존 일정보다 앞당겨 완료한 프로젝트입니다.",
+    detail2: [
+      "Safari, Chrome, 삼성 인터넷, 카카오톡·샤오미 웹브라우저 등 다양한 모바일 기기와 브라우저에서 이상 없이 동작하도록 퍼블리싱",
+      "SCSS를 활용해 200페이지 이상의 방대한 분량을 효율적으로 작업, 기존 일정보다 앞당겨 완료",
+    ],
     period: "2019.04~2019.08",
     url: "https://www.gcimed.com/main",
     type: "project",
     role: "PL",
     percentage: "100%",
-    tags: ["jQuery"],
+    tags: ["jQuery", "scss"],
   },
   {
     id: "yo_toyota",
@@ -172,16 +207,25 @@ export const projectsData: ProjectItem[] = [
     imgUrl: "/images/projects/logo-toyota.png",
     width: 1,
     bgUrl: "/images/projects/bg-yotoyota.png",
-    title: "토요타",
+    title: "Yo! Toyota! 하이브리드앱",
     desc: "고객용 하이브리드앱 신규 구축",
     detail:
-      "프로토타입 작업으로 프로젝트 수주부터 기획에도 참여한 프로젝트입니다. SVG를 활용하여 앱의 심플한 아이콘에 과하지 않은 생동감을 주었고, 담당 디자이너의 디테일한 지시에 맞추어 인터렉션의 미세한 부분까지 수정하여 자동차 브랜드라는 이미지에 맞는 고급스러운 움직임의 결과물을 만들었습니다. 기획 단계에서부터 아이디어 구상에 참여하며 프로젝트와 하이브리드앱 구축에 대한 이해도를 높였습니다. 기획과 디자인의 의도를 파악하여 디자이너와 고객사의 만족도를 100% 이끌어냈습니다.",
+      "프로젝트 수주 전 기획 단계에서 아이디어를 제공하고 프로토타입을 제작해 수주에 기여한 뒤, 퍼블리셔 1인으로 투입되어 퍼블리싱 전체를 책임진 하이브리드앱 프로젝트입니다. 브랜드의 고급스러운 이미지에 맞춰 부드럽고 과하지 않은 모션을 구현하고, 하이브리드앱 환경과 기기별 화면 차이에 따른 스타일 이슈까지 직접 해결했습니다.",
+    detail2: [
+      "수주 전 기획 단계에서 아이디어를 제공하고 프로토타입을 제작하여 프로젝트 수주에 기여",
+      "퍼블리셔 1인 투입으로 퍼블리싱 가이드, 전체 페이지 퍼블리싱, 전체 인터랙션을 단독 수행",
+      "회원 프로세스에 움직이는 SVG를 직접 제작해 적용하고, 스크롤·스와이퍼 모션의 타이밍과 디테일을 세밀하게 조정해 고객과 디자이너가 요구한 부드럽고 절제된 움직임 구현",
+      "하이브리드앱으로 감쌌을 때 발생하는 스타일 오류를 디버깅하여 안정적인 화면 제공",
+      "아이폰의 노치 디자인과 갤럭시의 평평한 디자인에 맞춰 상태바 영역 등을 기기별로 별도 스타일링해 각 디바이스에 어울리는 화면 구성",
+      "고객과 디자이너의 만족도를 이끌어내며 프로젝트 완수",
+    ],
     period: "2018.10~2019.03",
     url: "https://play.google.com/store/apps/details?id=com.yo.toyota&gl=US&pli=1",
     type: "project",
     role: "PL",
     percentage: "100%",
-    tags: ["jQuery"],
+    tags: ["jQuery", "SVG"],
+    featured: true,
   },
   {
     id: "golping",
@@ -191,7 +235,11 @@ export const projectsData: ProjectItem[] = [
     title: "골핑",
     desc: "웹/모바일웹/vue앱 유지보수",
     detail:
-      "10주년 기념 이벤트 / 블랙골프데이 이벤트 / 신규 및 기존 이벤트 / 모바일 푸시기획전 / edm 등 고객의 요구에 맞춰 신속하고 정확하게 퍼블리싱 작업을 완료했습니다.",
+      "웹, 모바일웹, Vue 앱을 대상으로 1년간 운영 유지보수를 전담한 프로젝트입니다. 고객의 요구에 맞춰 이벤트와 기획전 퍼블리싱을 신속하고 정확하게 처리했습니다.",
+    detail2: [
+      "10주년 기념 이벤트, 블랙골프데이 이벤트, 신규 및 기존 이벤트 퍼블리싱",
+      "모바일 푸시 기획전 및 EDM 퍼블리싱",
+    ],
     period: "2018.01~2018.12",
     url: "https://golping.golfzon.com/",
     type: "maintain",
@@ -207,7 +255,12 @@ export const projectsData: ProjectItem[] = [
     title: "자생 한방병원",
     desc: "웹/모바일웹 유지보수",
     detail:
-      "메인 (Web/Mobile) 리뉴얼 / 헤더, GNB, 푸터 등 레이아웃 리뉴얼 / 내 질환의 모든 것 카테고리 페이지 리뉴얼 작업을 했습니다. 고객사의 디자이너와 개발자와 직접 커뮤니케이션하며 퍼블리싱 파트를 담당했습니다.",
+      "자생 한방병원 웹/모바일웹의 리뉴얼과 운영을 담당한 프로젝트로, 고객사의 디자이너, 개발자와 직접 소통하며 퍼블리싱 파트를 책임졌습니다.",
+    detail2: [
+      "메인(Web/Mobile) 리뉴얼",
+      "헤더, GNB, 푸터 등 공통 레이아웃 리뉴얼",
+      "'내 질환의 모든 것' 카테고리 페이지 리뉴얼",
+    ],
     period: "2018.01~2018.12",
     url: "https://www.jaseng.co.kr/",
     type: "maintain",
@@ -221,7 +274,8 @@ export const projectsData: ProjectItem[] = [
     width: 2,
     title: "GC밸런스 심리상담센터",
     desc: "웹/모바일웹 사이트 신규 구축",
-    detail: "전체 페이지 퍼블리싱 및 UI 스크립트를 작성했습니다.",
+    detail:
+      "GC밸런스 심리상담센터의 웹/모바일웹 사이트를 신규 구축한 프로젝트로, 전체 페이지 퍼블리싱과 UI 스크립트를 단독으로 담당했습니다.",
     period: "2018.08~2018.10",
     type: "project",
     role: "PL",
@@ -235,7 +289,8 @@ export const projectsData: ProjectItem[] = [
     bgUrl: "/images/projects/bg-snsys.png",
     title: "삼성기전",
     desc: "웹 사이트 신규 구축",
-    detail: "전체 페이지 퍼블리싱 및 UI 스크립트를 작성했습니다.",
+    detail:
+      "삼성기전 웹사이트를 신규 구축한 프로젝트로, 전체 페이지 퍼블리싱과 UI 스크립트를 단독으로 담당해 짧은 기간 안에 완료했습니다.",
     period: "2018.07~2018.08",
     url: "http://www.snsys.net/",
     type: "project",
@@ -250,7 +305,8 @@ export const projectsData: ProjectItem[] = [
     bgUrl: "/images/projects/bg-sangsangin.png",
     title: "상상인 저축은행",
     desc: "웹 사이트 신규 구축",
-    detail: "전체 페이지 퍼블리싱 및 UI 스크립트를 작성했습니다.",
+    detail:
+      "상상인 저축은행 웹사이트를 신규 구축한 프로젝트로, 전체 페이지 퍼블리싱과 UI 스크립트를 단독으로 담당했습니다.",
     period: "2018.04~2018.07",
     type: "project",
     role: "PL",
@@ -265,7 +321,7 @@ export const projectsData: ProjectItem[] = [
     title: "헤리트 해빛온 태양광시스템",
     desc: "대시보드 신규 구축",
     detail:
-      "태양광 시스템 대시보드 신규 구축 프로젝트로, 전달받은 데이터를 그래프로 시각화 할 수 있도록 chart.js를 사용했습니다.",
+      "태양광 시스템 대시보드를 신규 구축한 프로젝트로, 전달받은 데이터를 chart.js로 그래프 시각화하는 화면을 구현했습니다.",
     period: "2018.05~2018.06",
     type: "project",
     role: "PL",
@@ -279,7 +335,8 @@ export const projectsData: ProjectItem[] = [
     bgUrl: "/images/projects/bg-golfzon.png",
     title: "골프존 통합멤버십",
     desc: "웹 사이트 신규 구축",
-    detail: "전체 페이지 퍼블리싱 및 UI 스크립트를 작성했습니다.",
+    detail:
+      "골프존 통합멤버십 사이트를 신규 구축한 프로젝트로, 전체 페이지 퍼블리싱과 UI 스크립트를 단독으로 담당해 짧은 기간 안에 완료했습니다.",
     period: "2018.03~2018.04",
     url: "https://www.golfzoncommerce.com/",
     type: "project",
@@ -294,7 +351,8 @@ export const projectsData: ProjectItem[] = [
     bgUrl: "/images/projects/bg-jaws.png",
     title: "죠스떡볶이",
     desc: "브랜드, 프랜차이즈 웹/모바일웹 사이트 신규 구축",
-    detail: "전체 페이지 퍼블리싱 및 UI 스크립트를 작성했습니다.",
+    detail:
+      "죠스떡볶이 브랜드·프랜차이즈 웹/모바일웹 사이트를 신규 구축한 프로젝트로, 전체 페이지 퍼블리싱과 UI 스크립트를 단독으로 담당했습니다.",
     period: "2017.12~2018.02",
     url: "http://www.jawsfood.com/",
     type: "project",
@@ -310,7 +368,7 @@ export const projectsData: ProjectItem[] = [
     title: "드림라인",
     desc: "웹 사이트 신규 구축",
     detail:
-      "전체 페이지 퍼블리싱 및 UI 스크립트를 작성했습니다. 사수에게 자문을 구해가며 정석적이고 효율적인 HTML, CSS, javascript 작성을 배웠습니다. 일정 준수했습니다.",
+      "드림라인 웹사이트를 신규 구축한 프로젝트로, 전체 페이지 퍼블리싱과 UI 스크립트를 담당해 일정을 준수해 완료했습니다. 사수의 자문을 받으며 정석적이고 효율적인 HTML, CSS, JavaScript 작성법을 익혔습니다.",
     period: "2017.07~2017.07",
     url: "https://www.dreamline.co.kr/index.php",
     type: "project",
@@ -323,9 +381,8 @@ export const projectsData: ProjectItem[] = [
     title: "유한킴벌리 숲픈날 하이브리드앱",
     desc: "하이브리드앱 신규 구축",
     detail:
-      "전체 페이지 퍼블리싱 및 UI 스크립트를 작성했습니다. 사수에게 자문을 구해가며 정석적이고 효율적인 HTML, CSS, javascript 작성을 배웠습니다. 일정 준수했습니다.",
+      "유한킴벌리 숲픈날 하이브리드앱을 신규 구축한 프로젝트로, 퍼블리싱과 UI 스크립트 작업을 담당했습니다.",
     period: "2017.07~2017.07",
-    url: "https://www.dreamline.co.kr/index.php",
     type: "project",
     role: "PL",
     percentage: "60%",
@@ -336,7 +393,11 @@ export const projectsData: ProjectItem[] = [
     title: "브라운교육 t4u",
     desc: "반응형 웹 사이트 신규 구축",
     detail:
-      "반응형으로 작업한 첫 프로젝트입니다. Mobile First 규칙을 통해 css코드를 최소화 하는 방법으로 작업했습니다. 서브페이지 반응형 코딩 및 개발자와의 커뮤니케이션을 통한 마무리 작업 담당했습니다.",
+      "처음으로 반응형 웹을 작업한 프로젝트로, Mobile First 방식을 적용해 CSS 코드를 최소화했습니다.",
+    detail2: [
+      "Mobile First 방식으로 CSS 코드를 최소화하며 서브페이지 반응형 코딩",
+      "개발자와 소통하며 마무리 작업 담당",
+    ],
     period: "2017.04~2017.07",
     type: "project",
     role: "PA",
@@ -348,7 +409,8 @@ export const projectsData: ProjectItem[] = [
     title: "스마트교복",
     desc: "웹/모바일웹 사이트 신규 구축",
     detail:
-      "GNB, 푸터 및 서브페이지 코딩 담당했습니다. 첫 구축 프로젝트로, 도전적인 디자인을 퍼블리싱으로 구현해내는 데 약간의 어려움이 있었지만 원활하게 마무리 되었습니다.",
+      "첫 구축 프로젝트로, 도전적인 디자인을 퍼블리싱으로 구현해 원활하게 마무리했습니다.",
+    detail2: ["GNB, 푸터 및 서브페이지 코딩 담당"],
     period: "2017.03~2017.04",
     type: "project",
     role: "PA",

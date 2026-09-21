@@ -54,153 +54,168 @@ export default function Skills({ id }: { id: string }) {
             </dl>
           </div>
         </div>
-        <ul className={styles.list}>
-          <li className={styles.item}>
-            <Image
-              src="/images/skills/skills-html.svg"
-              alt="HTML"
-              width={80}
-              height={80}
-            />
-            <span className={styles.txt}>HTML5</span>
-          </li>
-          <li className={styles.item}>
-            <Image
-              src="/images/skills/skills-css.svg"
-              alt="CSS"
-              width={80}
-              height={80}
-            />
-            <span className={styles.txt}>CSS3</span>
-          </li>
-          <li className={styles.item}>
-            <Image
-              src="/images/skills/skills-scss.svg"
-              alt="SCSS"
-              width={80}
-              height={80}
-            />
-            <span className={styles.txt}>SCSS</span>
-          </li>
-          <li className={styles.item}>
-            <Image
-              src="/images/skills/skills-javascript.svg"
-              alt="JavaScript"
-              width={80}
-              height={80}
-            />
-            <span className={styles.txt}>JavaScript</span>
-          </li>
-          <li className={styles.item}>
-            <Image
-              src="/images/skills/skills-typescript.svg"
-              alt="TypeScript"
-              width={80}
-              height={80}
-            />
-            <span className={styles.txt}>TypeScript</span>
-          </li>
-          <li className={styles.item}>
-            <Image
-              src="/images/skills/skills-jquery.svg"
-              alt="jQuery"
-              width={80}
-              height={80}
-            />
-            <span className={styles.txt}>jQuery</span>
-          </li>
-          <li className={styles.item}>
-            <Image
-              src="/images/skills/skills-nodejs.svg"
-              alt="Nodejs"
-              width={80}
-              height={80}
-            />
-            <span className={styles.txt}>Nodejs</span>
-          </li>
-          <li className={styles.item}>
-            <Image
-              src="/images/skills/skills-npm.svg"
-              alt="npm"
-              width={80}
-              height={80}
-            />
-            <span className={styles.txt}>npm</span>
-          </li>
-          <li className={styles.item}>
-            <Image
-              src="/images/skills/skills-git.svg"
-              alt="git"
-              width={80}
-              height={80}
-            />
-            <span className={styles.txt}>git</span>
-          </li>
-          <li className={styles.item}>
-            <Image
-              src="/images/skills/skills-react.svg"
-              alt="React"
-              width={80}
-              height={80}
-            />
-            <span className={styles.txt}>React</span>
-          </li>
-          <li className={styles.item}>
-            <Image
-              src="/images/skills/skills-vue.svg"
-              alt="Vue3"
-              width={80}
-              height={80}
-            />
-            <span className={styles.txt}>Vue3</span>
-          </li>
-          <li className={styles.item}>
-            <Image
-              src="/images/skills/skills-nuxtjs.svg"
-              alt="Next.js"
-              width={80}
-              height={80}
-            />
-            <span className={styles.txt}>Nuxtjs</span>
-          </li>
-          <li className={styles.item}>
-            <Image
-              src="/images/skills/skills-photoshop.svg"
-              alt="Photoshop"
-              width={80}
-              height={80}
-            />
-            <span className={styles.txt}>Photoshop</span>
-          </li>
-          <li className={styles.item}>
-            <Image
-              src="/images/skills/skills-zeplin.svg"
-              alt="Zeplin"
-              width={80}
-              height={80}
-            />
-            <span className={styles.txt}>Zeplin</span>
-          </li>
-          <li className={styles.item}>
-            <Image
-              src="/images/skills/skills-figma.svg"
-              alt="Figma"
-              width={80}
-              height={80}
-            />
-            <span className={styles.txt}>Figma</span>
-          </li>
-          {/* <li className={styles.item}>
-            <Image
-              src="/images/skills/skills-gsap.png"
-              alt="GSAP"
-              width={80}
-              height={80}
-              className={styles.logo}
-            />
-            <span className={styles.txt}>GSAP</span>
-          </li> */}
-        </ul>
+        <div className={styles.groups}>
+          <div className={styles.group}>
+            <h4 className={styles.groupTit}>Language &amp; Framework</h4>
+            <ul className={styles.list}>
+              <li className={styles.item}>
+                <Image
+                  src="/images/skills/skills-html.svg"
+                  alt="HTML"
+                  width={50}
+                  height={50}
+                />
+                <span className={styles.txt}>HTML5</span>
+              </li>
+              <li className={styles.item}>
+                <Image
+                  src="/images/skills/skills-css.svg"
+                  alt="CSS"
+                  width={50}
+                  height={50}
+                />
+                <span className={styles.txt}>CSS3</span>
+              </li>
+              <li className={styles.item}>
+                <Image
+                  src="/images/skills/skills-scss.svg"
+                  alt="SCSS"
+                  width={50}
+                  height={50}
+                />
+                <span className={styles.txt}>SCSS</span>
+              </li>
+              <li className={styles.item}>
+                <Image
+                  src="/images/skills/skills-javascript.svg"
+                  alt="JavaScript"
+                  width={50}
+                  height={50}
+                />
+                <span className={styles.txt}>JavaScript</span>
+              </li>
+              <li className={styles.item}>
+                <Image
+                  src="/images/skills/skills-typescript.svg"
+                  alt="TypeScript"
+                  width={50}
+                  height={50}
+                />
+                <span className={styles.txt}>TypeScript</span>
+              </li>
+              <li className={styles.item}>
+                <Image
+                  src="/images/skills/skills-jquery.svg"
+                  alt="jQuery"
+                  width={50}
+                  height={50}
+                />
+                <span className={styles.txt}>jQuery</span>
+              </li>
+              <li className={styles.item}>
+                <Image
+                  src="/images/skills/skills-react.svg"
+                  alt="React"
+                  width={50}
+                  height={50}
+                />
+                <span className={styles.txt}>React</span>
+              </li>
+              <li className={styles.item}>
+                <Image
+                  src="/images/skills/skills-vue.svg"
+                  alt="Vue3"
+                  width={50}
+                  height={50}
+                />
+                <span className={styles.txt}>Vue3</span>
+              </li>
+              <li className={styles.item}>
+                <Image
+                  src="/images/skills/skills-nuxtjs.svg"
+                  alt="Nuxt.js"
+                  width={50}
+                  height={50}
+                />
+                <span className={styles.txt}>Nuxt.js</span>
+              </li>
+              <li className={styles.item}>
+                <Image
+                  src="/images/skills/skills-gsap.png"
+                  alt="GSAP"
+                  width={50}
+                  height={50}
+                  className={styles.logo}
+                />
+                <span className={styles.txt}>GSAP</span>
+              </li>
+            </ul>
+          </div>
+          <div className={styles.group}>
+            <h4 className={styles.groupTit}>Tools &amp; Collaboration</h4>
+            <ul className={styles.list}>
+              <li className={styles.item}>
+                <Image
+                  src="/images/skills/skills-nodejs.svg"
+                  alt="Nodejs"
+                  width={50}
+                  height={50}
+                />
+                <span className={styles.txt}>Nodejs</span>
+              </li>
+              <li className={styles.item}>
+                <Image
+                  src="/images/skills/skills-npm.svg"
+                  alt="npm"
+                  width={50}
+                  height={50}
+                />
+                <span className={styles.txt}>npm</span>
+              </li>
+              <li className={styles.item}>
+                <Image
+                  src="/images/skills/skills-git.svg"
+                  alt="git"
+                  width={50}
+                  height={50}
+                />
+                <span className={styles.txt}>git</span>
+              </li>
+            </ul>
+          </div>
+          <div className={styles.group}>
+            <h4 className={styles.groupTit}>Design Tools</h4>
+            <ul className={styles.list}>
+              <li className={styles.item}>
+                <Image
+                  src="/images/skills/skills-photoshop.svg"
+                  alt="Photoshop"
+                  width={50}
+                  height={50}
+                />
+                <span className={styles.txt}>Photoshop</span>
+              </li>
+              <li className={styles.item}>
+                <Image
+                  src="/images/skills/skills-zeplin.svg"
+                  alt="Zeplin"
+                  width={50}
+                  height={50}
+                />
+                <span className={styles.txt}>Zeplin</span>
+              </li>
+              <li className={styles.item}>
+                <Image
+                  src="/images/skills/skills-figma.svg"
+                  alt="Figma"
+                  width={50}
+                  height={50}
+                />
+                <span className={styles.txt}>Figma</span>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </Section>
   );

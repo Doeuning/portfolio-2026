@@ -18,9 +18,31 @@
   margin-bottom: v.$spacing-lg;
 }
 
+.groups {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: v.$spacing-lg;
+}
+
+.group {
+  & ~ .group {
+    margin-top: v.$spacing-md;
+  }
+}
+
+.groupTit {
+  margin-bottom: v.$spacing-sm;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
 .list {
   display: grid;
-  grid-template-columns: repeat(4, max-content);
+  grid-template-columns: repeat(auto-fit, minmax(50px, 50px));
   gap: v.$spacing-lg;
   list-style: none;
   padding: 0;
@@ -53,7 +75,7 @@
   display: block;
   margin-top: v.$spacing-sm;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .logo {
@@ -64,13 +86,13 @@
   .inner {
     flex-direction: column;
     gap: v.$spacing-lg;
+    align-items: stretch;
   }
   .list {
     width: 100%;
-    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
     gap: v.$spacing-md;
   }
-  .item {
-    justify-content: center;
+  .txt {
+    font-size: 12px;
   }
 }

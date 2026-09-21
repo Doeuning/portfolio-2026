@@ -81,11 +81,6 @@ export default function Modal({
                 </div>
 
                 <div className={styles.item}>
-                  <dt>플랫폼</dt>
-                  <dd>{data?.isMobile ? "모바일" : "웹"}</dd>
-                </div>
-
-                <div className={styles.item}>
                   <dt>역할</dt>
                   <dd>{data?.role}</dd>
                 </div>

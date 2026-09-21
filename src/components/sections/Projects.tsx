@@ -18,12 +18,16 @@ export default function Projects({ id }: { id: string }) {
   const [filter, setFilter] = useState<FilterType>("all");
   const [displayFilter, setDisplayFilter] = useState<FilterType>("all");
   const [isSwiperVisible, setIsSwiperVisible] = useState(true);
+  const [showOthers, setShowOthers] = useState(false);
   const [selectedProject, setSelectedProject] = useState<
     (typeof projectsData)[number] | null
   >(null);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const filterSwapTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const featuredProjects = projectsData.filter((project) => project.featured);
+  const otherProjects = projectsData.filter((project) => !project.featured);
 
   useEffect(() => {
     return () => {
@@ -45,8 +49,8 @@ export default function Projects({ id }: { id: string }) {
 
   const filteredProjects =
     displayFilter === "all"
-      ? projectsData
-      : projectsData.filter((project) => project.type === displayFilter);
+      ? otherProjects
+      : otherProjects.filter((project) => project.type === displayFilter);
 
   const handleOpenModal = (project: (typeof projectsData)[number]) => {
     setSelectedProject(project);
@@ -63,60 +67,11 @@ export default function Projects({ id }: { id: string }) {
   return (
     <Section id={id}>
       <div className={`${styles.inner} projects-inner`}>
-        <div className={styles.filter}>
-          {" "}
-          <button
-            type="button"
-            className={filter === "all" ? styles.active : ""}
-            onClick={() => handleFilterChange("all")}
-          >
-            {" "}
-            ALL{" "}
-          </button>{" "}
-          <button
-            type="button"
-            className={filter === "project" ? styles.active : ""}
-            onClick={() => handleFilterChange("project")}
-          >
-            {" "}
-            PROJECT{" "}
-          </button>{" "}
-          <button
-            type="button"
-            className={filter === "maintain" ? styles.active : ""}
-            onClick={() => handleFilterChange("maintain")}
-          >
-            {" "}
-            MAINTENANCE{" "}
-          </button>{" "}
-        </div>
-        <div
-          className={`${styles.swiperWrap} ${
-            isSwiperVisible ? "" : styles.swiperWrapHidden
-          }`}
-        >
-          <Swiper
-            key={displayFilter}
-            className={styles.list}
-            spaceBetween={24}
-            slidesPerView={3}
-            observer
-            observeParents
-            speed={0}
-            breakpoints={{
-              0: {
-                slidesPerView: 1,
-              },
-              1079: {
-                slidesPerView: 3,
-              },
-              1199: {
-                slidesPerView: 3,
-              },
-            }}
-          >
-            {filteredProjects.map((project) => (
-              <SwiperSlide key={project.id} className={styles.item}>
+        <div className={styles.featuredWrap}>
+          <h3 className={styles.sectionTit}>핵심 프로젝트</h3>
+          <div className={styles.featuredGrid}>
+            {featuredProjects.map((project) => (
+              <div key={project.id} className={styles.featuredCard}>
                 <div className={styles.img}>
                   {project.imgUrl ? (
                     <Image
@@ -136,7 +91,6 @@ export default function Projects({ id }: { id: string }) {
                 <div className={styles.info}>
                   <h3 className={styles.tit}>{project.title}</h3>
                   <p className={styles.desc}>{project.desc}</p>
-                  {/* <div className={styles.detail}>{project.detail}</div> */}
                   <button
                     type="button"
                     className={styles.btn}
@@ -145,9 +99,117 @@ export default function Projects({ id }: { id: string }) {
                     자세히 보기
                   </button>
                 </div>
-              </SwiperSlide>
+              </div>
             ))}
-          </Swiper>
+          </div>
+
+          <button
+            type="button"
+            className={styles.toggleBtn}
+            onClick={() => setShowOthers((prev) => !prev)}
+            aria-expanded={showOthers}
+          >
+            <span>
+              {showOthers
+                ? "기타 프로젝트 접기 ▲"
+                : `기타 프로젝트 보기 (${otherProjects.length}) ▼`}
+            </span>
+          </button>
+        </div>
+
+        <div
+          className={`${styles.othersWrap} ${
+            showOthers ? styles.othersOpen : ""
+          }`}
+        >
+          <div className={styles.othersInner}>
+            <div className={styles.filter}>
+              {" "}
+              <button
+                type="button"
+                className={filter === "all" ? styles.active : ""}
+                onClick={() => handleFilterChange("all")}
+              >
+                {" "}
+                ALL{" "}
+              </button>{" "}
+              <button
+                type="button"
+                className={filter === "project" ? styles.active : ""}
+                onClick={() => handleFilterChange("project")}
+              >
+                {" "}
+                PROJECT{" "}
+              </button>{" "}
+              <button
+                type="button"
+                className={filter === "maintain" ? styles.active : ""}
+                onClick={() => handleFilterChange("maintain")}
+              >
+                {" "}
+                MAINTENANCE{" "}
+              </button>{" "}
+            </div>
+            <div
+              className={`${styles.swiperWrap} ${
+                isSwiperVisible ? "" : styles.swiperWrapHidden
+              }`}
+            >
+              <Swiper
+                key={displayFilter}
+                className={styles.list}
+                spaceBetween={24}
+                slidesPerView={3}
+                observer
+                observeParents
+                speed={0}
+                breakpoints={{
+                  0: {
+                    slidesPerView: 1,
+                  },
+                  1079: {
+                    slidesPerView: 3,
+                  },
+                  1199: {
+                    slidesPerView: 5,
+                  },
+                }}
+                freeMode
+              >
+                {filteredProjects.map((project) => (
+                  <SwiperSlide key={project.id} className={styles.item}>
+                    <div className={styles.img}>
+                      {project.imgUrl ? (
+                        <Image
+                          src={project.imgUrl}
+                          alt={project.title}
+                          width={(project.width ?? 1) * 50}
+                          height={50}
+                          className={styles.bg}
+                          quality={100}
+                        />
+                      ) : (
+                        <div className={styles.noImage}>
+                          <span>PROJECT</span>
+                        </div>
+                      )}
+                    </div>
+                    <div className={styles.info}>
+                      <h3 className={styles.tit}>{project.title}</h3>
+                      <p className={styles.desc}>{project.desc}</p>
+                      <button
+                        type="button"
+                        className={styles.btn}
+                        onClick={() => handleOpenModal(project)}
+                      >
+                        자세히 보기
+                      </button>
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
+          </div>
         </div>
       </div>
       <Modal

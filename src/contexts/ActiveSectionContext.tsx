@@ -84,10 +84,8 @@ export function ActiveSectionProvider({ children }: { children: ReactNode }) {
       if (isMobile) {
         const top = target.getBoundingClientRect().top + window.scrollY - 50;
         window.scrollTo({ top, behavior: "smooth" });
-        console.log("mobile");
       } else {
         target.scrollIntoView({ behavior: "smooth", block: "start" });
-        console.log("pc");
       }
     }
     waitForScrollEnd(() => {

@@ -18,7 +18,7 @@ export default function Experience({ id }: { id: string }) {
                 <th scope="col">기간</th>
                 <th scope="col">회사</th>
                 <th scope="col">직급</th>
-                <th scope="col">소속속</th>
+                <th scope="col">소속</th>
                 <th scope="col">직무</th>
               </tr>
             </thead>
@@ -29,6 +29,13 @@ export default function Experience({ id }: { id: string }) {
                 <td>선임연구원</td>
                 <td>개발 1팀</td>
                 <td>프론트엔드개발자</td>
+              </tr>
+              <tr className={styles.gap}>
+                <td>2023. 04 ~ 2025. 03</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>건강상의 이유로 재충전 기간</td>
               </tr>
               <tr>
                 <td>2020. 06 ~ 2023. 03</td>
