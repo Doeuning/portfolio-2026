@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
+import type { Swiper as SwiperInstance } from "swiper";
 import "swiper/css";
 
 import { projectsData } from "@/data/projects";
@@ -13,12 +14,15 @@ import styles from "./Projects.module.scss";
 type FilterType = "all" | "project" | "maintain";
 
 const FILTER_TRANSITION_MS = 280;
+const ARROW_SLIDE_MS = 300;
 
 export default function Projects({ id }: { id: string }) {
   const [filter, setFilter] = useState<FilterType>("all");
   const [displayFilter, setDisplayFilter] = useState<FilterType>("all");
   const [isSwiperVisible, setIsSwiperVisible] = useState(true);
   const [showOthers, setShowOthers] = useState(false);
+  const [edge, setEdge] = useState({ isBeginning: true, isEnd: false });
+  const swiperRef = useRef<SwiperInstance | null>(null);
   const [selectedProject, setSelectedProject] = useState<
     (typeof projectsData)[number] | null
   >(null);
@@ -51,6 +55,10 @@ export default function Projects({ id }: { id: string }) {
     displayFilter === "all"
       ? otherProjects
       : otherProjects.filter((project) => project.type === displayFilter);
+
+  const syncEdge = (swiper: SwiperInstance) => {
+    setEdge({ isBeginning: swiper.isBeginning, isEnd: swiper.isEnd });
+  };
 
   const handleOpenModal = (project: (typeof projectsData)[number]) => {
     setSelectedProject(project);
@@ -155,6 +163,28 @@ export default function Projects({ id }: { id: string }) {
                 isSwiperVisible ? "" : styles.swiperWrapHidden
               }`}
             >
+              <button
+                type="button"
+                className={`${styles.arrow} ${styles.arrowPrev}`}
+                onClick={() => swiperRef.current?.slidePrev(ARROW_SLIDE_MS)}
+                disabled={edge.isBeginning}
+                aria-label="이전 프로젝트"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M15 5l-7 7 7 7" />
+                </svg>
+              </button>
+              <button
+                type="button"
+                className={`${styles.arrow} ${styles.arrowNext}`}
+                onClick={() => swiperRef.current?.slideNext(ARROW_SLIDE_MS)}
+                disabled={edge.isEnd}
+                aria-label="다음 프로젝트"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
               <Swiper
                 key={displayFilter}
                 className={styles.list}
@@ -163,11 +193,17 @@ export default function Projects({ id }: { id: string }) {
                 observer
                 observeParents
                 speed={0}
+                onSwiper={(swiper) => {
+                  swiperRef.current = swiper;
+                  syncEdge(swiper);
+                }}
+                onSlideChange={syncEdge}
+                onResize={syncEdge}
                 breakpoints={{
                   0: {
                     slidesPerView: 1,
                   },
-                  1079: {
+                  768: {
                     slidesPerView: 3,
                   },
                   1199: {
