@@ -25,12 +25,6 @@
   gap: v.$spacing-lg;
 }
 
-.group {
-  & ~ .group {
-    margin-top: v.$spacing-md;
-  }
-}
-
 .groupTit {
   margin-bottom: v.$spacing-sm;
   font-weight: 700;
@@ -43,7 +37,7 @@
 .list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(50px, 50px));
-  gap: v.$spacing-lg;
+  gap: v.$spacing-sm v.$spacing-lg;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -64,6 +58,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+
   img {
     height: auto;
   }
@@ -76,6 +71,7 @@
   margin-top: v.$spacing-sm;
   font-weight: 700;
   font-size: 14px;
+  text-align: center;
 }
 
 .logo {

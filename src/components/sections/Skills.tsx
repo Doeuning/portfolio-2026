@@ -46,6 +46,11 @@ export default function Skills({ id }: { id: string }) {
               <dd className={styles.dd}>
                 Git, svn등의 형상관리 시스템 기반의 협업 경험
               </dd>
+              <dt className={styles.dt}>Claude Code 기반 AI 바이브코딩</dt>
+              <dd className={styles.dd}>
+                Claude Code를 활용해 기획부터 구현, 리팩토링까지 빠르게 반복하며
+                개발 생산성을 높이는 AI 협업 개발 경험
+              </dd>
               <dt className={styles.dt}>효율적인 작업방식 추구</dt>
               <dd className={styles.dd}>
                 팀원들과 생산적인 토론으로 신속성, 정확성, 효율성을 최대화한
@@ -180,6 +185,20 @@ export default function Skills({ id }: { id: string }) {
                   height={50}
                 />
                 <span className={styles.txt}>git</span>
+              </li>
+            </ul>
+          </div>
+          <div className={styles.group}>
+            <h4 className={styles.groupTit}>AI Vibe Coding</h4>
+            <ul className={styles.list}>
+              <li className={styles.item}>
+                <Image
+                  src="/images/skills/skills-claude.svg"
+                  alt="Claude Code"
+                  width={50}
+                  height={50}
+                />
+                <span className={styles.txt}>Claude Code</span>
               </li>
             </ul>
           </div>
